@@ -1,137 +1,208 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-gray-900 text-white">
-      <div className="container mx-auto px-4 py-16">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* Company Info */}
-          <div className="lg:col-span-2">
-            <div className="flex items-center space-x-3 mb-4">
-              <div className="w-12 h-12 bg-indigo-500 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-xl">KD</span>
-              </div>
+    <footer className="bg-gray-900 text-white relative overflow-hidden">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:py-10 relative z-10">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+          {/* Enhanced Company Info */}
+          <div className="lg:col-span-2 space-y-6">
+            {/* Logo Section - Using Link for home navigation */}
+            <Link to="/" className="flex items-center space-x-4 mb-6 group">
               <div className="flex flex-col">
-                <span className="text-2xl font-bold">K D ENTERPRISES</span>
-                <span className="text-xs text-gray-400 uppercase tracking-wide">Import • Export • Trading</span>
+                <span className="text-2xl lg:text-3xl font-bold bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+                  K D ENTERPRISES
+                </span>
+                <span className="text-xs lg:text-sm text-gray-400 uppercase tracking-wider flex items-center gap-2">
+                  <i className="ri-import-line"></i>
+                  Import • Export • Trading
+                </span>
               </div>
-            </div>
-            <p className="text-gray-400 mb-6 max-w-md leading-relaxed">
-              A trusted name in chemical and plastic product trading since 2025. 
-              We specialize in PVC granules, titanium dioxide chemicals, and premium plastic products 
-              with a commitment to quality and customer satisfaction.
+            </Link>
+
+            {/* Description */}
+            <p className="text-gray-300 max-w-lg leading-relaxed text-sm lg:text-base">
+              A trusted name in chemical and plastic product trading since{" "}
+              <span className="font-semibold text-indigo-400">2008</span>. We
+              specialize in PVC granules, titanium dioxide chemicals, and
+              premium plastic products with a commitment to quality and customer
+              satisfaction.
             </p>
-            <div className="mb-6">
-              <div className="text-sm text-gray-400 mb-2">IEC: AHRPI1585L | PAN: AHRPI1585L</div>
-              <div className="text-sm text-gray-400">Proprietorship Firm</div>
-            </div>
-            <div className="flex space-x-4">
-              <a 
-                href="#" 
-                className="w-10 h-10 bg-gray-800 hover:bg-indigo-500 rounded-lg flex items-center justify-center transition-colors duration-200"
-                aria-label="LinkedIn"
-              >
-                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                </svg>
-              </a>
-              <a 
-                href="mailto:kdenterprises1601@gmail.com" 
-                className="w-10 h-10 bg-gray-800 hover:bg-indigo-500 rounded-lg flex items-center justify-center transition-colors duration-200"
-                aria-label="Email"
-              >
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                </svg>
-              </a>
-              <a 
-                href="tel:+919891511603" 
-                className="w-10 h-10 bg-gray-800 hover:bg-indigo-500 rounded-lg flex items-center justify-center transition-colors duration-200"
-                aria-label="Phone"
-              >
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                </svg>
-              </a>
+
+            {/* Business Details */}
+            <div className="bg-white/5 backdrop-blur-sm rounded-xl p-4 lg:p-6 border border-white/10">
+              <div className="grid sm:grid-cols-2 gap-3 text-sm">
+                <div className="flex items-center gap-2">
+                  <i className="ri-file-text-line text-indigo-400"></i>
+                  <span className="text-gray-400">IEC: AHRPI1585L</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <i className="ri-bank-card-line text-indigo-400"></i>
+                  <span className="text-gray-400">PAN: AHRPI1585L</span>
+                </div>
+                <div className="flex items-center gap-2 sm:col-span-2">
+                  <i className="ri-building-2-line text-indigo-400"></i>
+                  <span className="text-gray-400">Proprietorship Firm</span>
+                </div>
+              </div>
             </div>
           </div>
-          
-          {/* Quick Links */}
-          <div>
-            <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
+
+          {/* Enhanced Quick Links - All using Link with "to" */}
+          <div className="space-y-6">
+            <h4 className="text-lg lg:text-xl font-semibold flex items-center gap-2">
+              <i className="ri-links-line text-indigo-400"></i>
+              Quick Links
+            </h4>
             <ul className="space-y-3">
               <li>
-                <Link to="/" className="text-gray-400 hover:text-white transition-colors duration-200">
-                  Home
+                <Link
+                  to="/"
+                  className="group flex items-center gap-3 text-gray-400 hover:text-white transition-all duration-200 py-2 px-3 rounded-lg hover:bg-white/5"
+                >
+                  <i className="ri-home-line text-indigo-400 group-hover:scale-110 transition-transform"></i>
+                  <span>Home</span>
                 </Link>
               </li>
               <li>
-                <Link to="/about" className="text-gray-400 hover:text-white transition-colors duration-200">
-                  About Us
+                <Link
+                  to="/about"
+                  className="group flex items-center gap-3 text-gray-400 hover:text-white transition-all duration-200 py-2 px-3 rounded-lg hover:bg-white/5"
+                >
+                  <i className="ri-building-line text-indigo-400 group-hover:scale-110 transition-transform"></i>
+                  <span>About Us</span>
+                </Link>
+              </li>
+
+              <li>
+                <Link
+                  to="/services"
+                  className="group flex items-center gap-3 text-gray-400 hover:text-white transition-all duration-200 py-2 px-3 rounded-lg hover:bg-white/5"
+                >
+                  <i className="ri-service-line text-indigo-400 group-hover:scale-110 transition-transform"></i>
+                  <span>Services</span>
                 </Link>
               </li>
               <li>
-                <Link to="/products" className="text-gray-400 hover:text-white transition-colors duration-200">
-                  Products
-                </Link>
-              </li>
-              <li>
-                <Link to="/contact" className="text-gray-400 hover:text-white transition-colors duration-200">
-                  Contact
+                <Link
+                  to="/contact"
+                  className="group flex items-center gap-3 text-gray-400 hover:text-white transition-all duration-200 py-2 px-3 rounded-lg hover:bg-white/5"
+                >
+                  <i className="ri-customer-service-line text-indigo-400 group-hover:scale-110 transition-transform"></i>
+                  <span>Contact</span>
                 </Link>
               </li>
             </ul>
           </div>
-          
-          {/* Contact Info */}
-          <div>
-            <h4 className="text-lg font-semibold mb-4">Contact Information</h4>
-            <div className="space-y-3">
-              <div className="flex items-start space-x-3">
-                <svg className="w-5 h-5 text-gray-400 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                </svg>
-                <span className="text-gray-400 text-sm">
-                  R 1/10126-B, GALI NO 1<br />
-                  WEST GORAKH PARK SHAHDARA<br />
-                  NEAR MANDIR<br />
-                  DELHI 110032, INDIA
-                </span>
+
+          {/* Enhanced Contact Info */}
+          <div className="space-y-6">
+            <h4 className="text-lg lg:text-xl font-semibold flex items-center gap-2">
+              <i className="ri-contacts-line text-indigo-400"></i>
+              Get In Touch
+            </h4>
+
+            <div className="space-y-4">
+              {/* Address */}
+              <div className="group flex items-start gap-3 p-4 rounded-xl bg-white/5 hover:bg-white/10 transition-all duration-300 border border-white/10">
+                <div className="w-10 h-10 bg-indigo-500 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                  <i className="ri-map-pin-line text-white text-lg"></i>
+                </div>
+                <div>
+                  <div className="text-white font-medium mb-1 text-sm">
+                    Our Location
+                  </div>
+                  <div className="text-gray-400 text-sm leading-relaxed">
+                    R 1/10126-B, GALI NO 1<br />
+                    WEST GORAKH PARK SHAHDARA
+                    <br />
+                    NEAR MANDIR
+                    <br />
+                    <span className="text-indigo-400 font-medium">
+                      DELHI 110032, INDIA
+                    </span>
+                  </div>
+                </div>
               </div>
-              <div className="flex items-center space-x-3">
-                <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                </svg>
-                <span className="text-gray-400">kdenterprises1601@gmail.com</span>
+
+              {/* Email */}
+              <div className="group flex items-start gap-3 p-4 rounded-xl bg-white/5 hover:bg-white/10 transition-all duration-300 border border-white/10">
+                <div className="w-10 h-10 bg-indigo-500 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                  <i className="ri-mail-line text-white text-lg"></i>
+                </div>
+                <div>
+                  <div className="text-white font-medium mb-1 text-sm">
+                    Email Us
+                  </div>
+                  <a
+                    href="mailto:kdenterprises1601@gmail.com"
+                    className="text-gray-400 hover:text-indigo-400 transition-colors text-sm break-all"
+                  >
+                    kdenterprises1601@gmail.com
+                  </a>
+                </div>
               </div>
-              <div className="flex items-center space-x-3">
-                <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                </svg>
-                <span className="text-gray-400">+91 98915 11603</span>
+
+              {/* Phone */}
+              <div className="group flex items-start gap-3 p-4 rounded-xl bg-white/5 hover:bg-white/10 transition-all duration-300 border border-white/10">
+                <div className="w-10 h-10 bg-indigo-500 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                  <i className="ri-phone-line text-white text-lg"></i>
+                </div>
+                <div>
+                  <div className="text-white font-medium mb-1 text-sm">
+                    Call Us
+                  </div>
+                  <a
+                    href="tel:+919891511603"
+                    className="text-gray-400 hover:text-indigo-400 transition-colors text-sm font-medium"
+                  >
+                    +91 98915 11603
+                  </a>
+                </div>
               </div>
             </div>
           </div>
         </div>
-        
-        {/* Bottom Bar */}
-        <div className="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-gray-400 text-sm mb-4 md:mb-0">
-            &copy; {currentYear} K D Enterprises. All rights reserved.
-          </p>
-          <div className="flex space-x-6 text-sm">
-            <a href="#" className="text-gray-400 hover:text-white transition-colors duration-200">
-              Privacy Policy
-            </a>
-            <a href="#" className="text-gray-400 hover:text-white transition-colors duration-200">
-              Terms of Service
-            </a>
-            <a href="#" className="text-gray-400 hover:text-white transition-colors duration-200">
-              Trade Terms
-            </a>
+
+        {/* Enhanced Bottom Bar */}
+        <div className="border-t border-white/10 mt-12 lg:mt-16 pt-8 lg:pt-10">
+          <div className="flex flex-col lg:flex-row justify-between items-center gap-6">
+            {/* Copyright */}
+            <div className="flex flex-col sm:flex-row items-center gap-4 text-center lg:text-left">
+              <p className="text-gray-400 text-sm flex items-center gap-2">
+                <i className="ri-copyright-line text-indigo-400"></i>
+                {currentYear} K D Enterprises. All rights reserved.
+              </p>
+              <div className="hidden sm:block w-px h-4 bg-white/20"></div>
+            </div>
+
+            {/* Legal Links - Using Link with "to" for internal pages */}
+            <div className="flex flex-wrap justify-center lg:justify-end gap-6 text-sm">
+              <Link
+                to="/privacy-policy"
+                className="text-gray-400 hover:text-white transition-colors duration-200 flex items-center gap-2 group"
+              >
+                <i className="ri-shield-user-line text-indigo-400 group-hover:scale-110 transition-transform"></i>
+                Privacy Policy
+              </Link>
+              <Link
+                to="/terms-of-service"
+                className="text-gray-400 hover:text-white transition-colors duration-200 flex items-center gap-2 group"
+              >
+                <i className="ri-file-text-line text-indigo-400 group-hover:scale-110 transition-transform"></i>
+                Terms of Service
+              </Link>
+              <Link
+                to="/trade-terms"
+                className="text-gray-400 hover:text-white transition-colors duration-200 flex items-center gap-2 group"
+              >
+                <i className="ri-handshake-line text-indigo-400 group-hover:scale-110 transition-transform"></i>
+                Trade Terms
+              </Link>
+            </div>
           </div>
         </div>
       </div>
